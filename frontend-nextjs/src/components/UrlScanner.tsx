@@ -83,7 +83,7 @@ export function UrlScanner({ compact = false, onScanComplete }: UrlScannerProps)
         setError(null);
 
         try {
-            const response = await fetch('http://127.0.0.1:8002/scan/url', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000'}/scan/url`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ url: url.trim() }),
@@ -131,7 +131,7 @@ export function UrlScanner({ compact = false, onScanComplete }: UrlScannerProps)
         setError(null);
 
         try {
-            const response = await fetch('http://127.0.0.1:8002/api/url/report', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000'}/api/url/report`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ url: url.trim() }),
