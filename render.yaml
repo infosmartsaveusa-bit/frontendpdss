@@ -1,0 +1,12 @@
+services:
+  # Python Backend Service
+  - type: web
+    name: pds-backend
+    runtime: docker
+    rootDirectory: backend
+    plan: free # Use 'starter' or higher for better performance, but 'free' works for testing
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: PYTHON_VERSION
+        value: 3.10.0
